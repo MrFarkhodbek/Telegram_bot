@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: vapi-telegram-webrtc-backend
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: VAPI_TOKEN
+        sync: false
+      - key: ASSISTANT_ID
+        value: 7fc39985-27e5-492c-9140-6a4e2a1e5f7b
